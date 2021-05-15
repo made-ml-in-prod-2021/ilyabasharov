@@ -1,0 +1,10 @@
+name:           "LogisticRegression"
+import_from:    "sklearn.linear_model"
+path:           "modules/models/logistic_regression.joblib"
+kwargs:
+  penalty:      "l2"
+  C:            5.0
+  tol:          0.000001
+  solver:       "liblinear"
+  random_state: 38
+  n_jobs:       -1

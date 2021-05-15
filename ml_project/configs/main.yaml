@@ -1,0 +1,3 @@
+model:      "configs/modules/models/sgd_classifier.yaml"
+dataset:    "configs/datasets/heart_disease.yaml"
+preprocess: "configs/modules/process/preprocess.yaml"

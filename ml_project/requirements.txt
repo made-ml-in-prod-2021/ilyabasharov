@@ -1,0 +1,7 @@
+numpy
+click
+PyYAML
+joblib
+pandas
+scikit-learn
+marshmallow_dataclass
