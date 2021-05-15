@@ -6,8 +6,8 @@ from .process.preprocess import Preprocess
 
 
 __all__ = [
-	'BaseModel',
-	'Model',
-	'BaseProcess',
-	'Preprocess',
+    'BaseModel',
+    'Model',
+    'BaseProcess',
+    'Preprocess',
 ]
