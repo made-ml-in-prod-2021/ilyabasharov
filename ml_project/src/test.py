@@ -1,5 +1,6 @@
 import click
 import typing
+import logging
 
 from entities import (
     BaseLoader,
@@ -8,6 +9,9 @@ from entities import (
 
 from datasets import HeartDeseaseDataset
 from modules import Model
+from src.logs import setup_logging
+
+logger = logging.getLogger(__name__)
 
 
 @click.command()
@@ -23,6 +27,8 @@ def test(
     ''' It starts the main test pipeline '''
 
     args = BaseLoader(MainParams).read_params(config)
+
+    setup_logging(args.logs)
 
     dataset = HeartDeseaseDataset(
         config_path_dataset = args.dataset,

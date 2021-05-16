@@ -9,7 +9,7 @@ from entities import (
 
 from datasets import HeartDeseaseDataset
 from modules import Model
-from logs import setup_logging
+from src.logs import setup_logging
 
 logger = logging.getLogger(__name__)
 
@@ -40,6 +40,7 @@ def train(
     dataset = HeartDeseaseDataset(
         config_path_dataset = args.dataset,
         config_path_process = args.preprocess,
+        fitted              = False,
     )
 
     model = Model(args.model)

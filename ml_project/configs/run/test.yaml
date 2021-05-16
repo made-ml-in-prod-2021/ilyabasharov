@@ -1,4 +1,4 @@
 model:      "configs/modules/models/sgd_classifier.yaml"
-dataset:    "configs/datasets/heart_disease.yaml"
+dataset:    "configs/datasets/fake.yaml"
 preprocess: "configs/modules/process/preprocess.yaml"
-logs:       "configs/logs.yaml"
+logs:       "configs/logs/core.yaml"
