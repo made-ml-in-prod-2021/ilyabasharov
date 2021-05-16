@@ -8,7 +8,7 @@ Assignments for "ML in production" course by Mail.ru group
 ├── requirements.txt	<- Required libraries. Will be installed automatically (see below)
 ├── configs		<- Directory with config files.
 │	│
-│	├── main.yaml	<- config with paths for <model, dataset, processors> configs
+│	├── run		<- Dir with main configs [with paths for <model, dataset, processors> configs]
 │	├── datasets	<- ... for custom datasets
 │	└── modules		<- ... for custom modules
 │		│
@@ -27,7 +27,8 @@ Assignments for "ML in production" course by Mail.ru group
 │
 ├── src			<- Source project code
 │	│
-│	├── main.py		<- Main file for run
+│	├── test.py		<- Test pipeline
+│	├── train.py	<- Train pipeline
 │	├── entities	<- Set of entities in the form of dataclass. All suggested params of
 │	│	│
 │	│	├── dataset.py	<- ... custom dataset
@@ -39,24 +40,26 @@ Assignments for "ML in production" course by Mail.ru group
 │	│	├── main.py	<- ... set of paths to <model, dataset, processor>.
 │	│	└── loader.py	<- Basic loader for all type of structures
 │	│
-│	└── modules		<- Module constructors
+│	├── modules		<- Module constructors
 │	│	│ 
 │	│	├── models
+│	│	│	│
+│	│	│	├── base.py	<- Base form of Model class.
+│	│	│	└── model.py
+│	│	│		<- Model class example
 │	│	│
-│	│	├── base.py	<- Base form of Model class.
-│	│	└── model.py
-│	│		<- Model class example
-│	│
-│	├── process
-│	│	│   
-│	│	├── base.py <- Base form of Process class.
-│	│	│
-│	│	├── preprocess.py
-│	│	│		<- Preprocess class example
-│	│	└── build_features.py
-│	│		<- Example of transformer from raw to features
-│	└── io.py	<- Save/load module as joblib
-│
+│	│	└─── process
+│	│		│   
+│	│		├── base.py <- Base form of Process class.
+│	│		│
+│	│		├── preprocess.py
+│	│		│		<- Preprocess class example
+│	│		└── build_features.py
+│	│				<- Example of transformer from raw to features
+│	├── visualisation
+│	│				<- Directiory for report
+│	├── io.py	<- Save/load module via joblib
+│	└── logs.py <- Utils for logging
 └── tests			<- Tests (empty)
 
 ```
@@ -73,7 +76,7 @@ P.S. all runnings have `--help` argument.
 #### Run training/evaluation
 
 ```bash
-python3 src/train.py --config configs/train.yaml
+python3 src/train.py --config configs/run/train_logreg.yaml
 ```
 Models and preprocessors will be saved based on `--config` argument.
 Also you can change the the model and preprocessor pipeline inside `--config` argument path.
@@ -81,7 +84,7 @@ Also you can change the the model and preprocessor pipeline inside `--config` ar
 #### Run testing
 
 ```bash
-python3 src/test.py --config configs/test.yaml
+python3 src/test.py --config configs/run/test.yaml
 ```
 Predictions will be saved based on `--config` argument path.
 
