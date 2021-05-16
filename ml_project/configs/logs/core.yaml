@@ -40,6 +40,10 @@ loggers:
         level:     DEBUG
         handlers:  [file_handler]
         propagate: True
+    datasets.heart_disease:
+        level:     DEBUG
+        handlers:  [file_handler]
+        propagate: True
 root:
     level:    WARNING
     handlers: [stream_handler]

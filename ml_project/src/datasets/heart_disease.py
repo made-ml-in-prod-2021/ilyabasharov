@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import os
 import typing
 import pandas
+import logging
 
 from sklearn.model_selection import train_test_split
 
@@ -9,6 +11,8 @@ from entities import FeatureParams
 from modules import Preprocess
 
 from datasets.base import BaseDataset
+
+logger = logging.getLogger(__name__)
 
 
 class HeartDeseaseDataset(BaseDataset):
@@ -64,7 +68,9 @@ def get_data(
 ) -> typing.Dict[str, pandas.DataFrame]:
 
     data = dict()
-
+    if not os.path.exists(data_path):
+        logger.error(f'File loading failed: {data_path} does not exit')
+    
     data['all'] = pandas.read_csv(data_path)
 
     data['train'], data['val'] = train_test_split(

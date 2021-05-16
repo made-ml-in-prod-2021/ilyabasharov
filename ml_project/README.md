@@ -96,7 +96,7 @@ python3 src/generate_data.py --n_samples 1000 --original_data_path datasets/raw/
 #### Run report creation
 
 ```bash
-python3 python3 src/visualisation/report.py --dataset_path datasets/raw/heart_disease.csv --save_path logs/report.html
+python3 src/visualisation/report.py --dataset_path datasets/raw/heart_disease.csv --save_path logs/report.html
 ```
 
 ### Review
