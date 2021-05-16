@@ -6,3 +6,4 @@ class MainParams:
     model:      str
     dataset:    str
     preprocess: str
+    logs:       str

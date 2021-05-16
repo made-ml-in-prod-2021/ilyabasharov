@@ -36,6 +36,13 @@ class BaseModel:
 
 		pass
 
+	def test(
+		self,
+		features: numpy.ndarray,
+	) -> typing.NoReturn:
+
+		pass
+
 
 	def save(
 		self,

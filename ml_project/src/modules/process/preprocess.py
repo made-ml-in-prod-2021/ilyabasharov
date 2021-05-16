@@ -19,6 +19,7 @@ class Preprocess(BaseProcess):
         self,
         config_path:    str,
         feature_params: FeatureParams,
+        fitted:         bool = False,
     ) -> Preprocess:
 
         super().__init__(config_path)
@@ -26,6 +27,7 @@ class Preprocess(BaseProcess):
         self.process = build_transformer(
             process_params = self.params,
             feature_params = feature_params,
+            fitted         = fitted,
         )
 
     def to_train(
@@ -47,8 +49,6 @@ class Preprocess(BaseProcess):
     def save(
         self,
     ) -> typing.NoReturn:
-
-        sklearn.utils.validation.check_is_fitted(self.process)
 
         save_transformer(
             transformer    = self.process,

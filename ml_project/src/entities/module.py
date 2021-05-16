@@ -7,3 +7,4 @@ class ModuleParams:
     import_from: str
     path:        str
     kwargs:      dict
+    save_preds:  str = dataclasses.field(default='')

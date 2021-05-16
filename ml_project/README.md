@@ -64,5 +64,5 @@ Assignments for "ML in production" course by Mail.ru group
 ### Installation
 
 ```bash
-	pip install -e .
+pip install -e .
 ```

@@ -1,23 +1,28 @@
 categorical:
-  - name:        "SimpleImputer"
-    import_from: "sklearn.impute"
+
+  - name:        SimpleImputer
+    import_from: sklearn.impute
     path:        "modules/process/categorical/simple_imputer.joblib"
     kwargs:
       strategy:  "most_frequent"
-  - name:        "OneHotEncoder"
-    import_from: "sklearn.preprocessing"
+
+  - name:        OneHotEncoder
+    import_from: sklearn.preprocessing
     path:        "modules/process/categorical/one_hot_encoder.joblib"
     kwargs:
       categories: "auto"
+      sparse:     False
 
 numerical:
-  - name:        "SimpleImputer"
-    import_from: "sklearn.impute"
+
+  - name:        SimpleImputer
+    import_from: sklearn.impute
     path:        "modules/process/numerical/simple_imputer.joblib"
     kwargs:
       strategy:  "mean"
-  - name:        "StandardScaler"
-    import_from: "sklearn.preprocessing"
+      
+  - name:        StandardScaler
+    import_from: sklearn.preprocessing
     path:        "modules/process/numerical/standard_scaler.joblib"
     kwargs:
       with_mean: True

@@ -1,6 +1,7 @@
-name:            "SGDClassifier"
-import_from:     "sklearn.linear_model"
+name:            SGDClassifier
+import_from:     sklearn.linear_model
 path:            "modules/models/sgd_classifier.joblib"
+save_preds:      "datasets/predictions/sgd_classifier.csv"
 kwargs:
   loss:          "modified_huber"
   penalty:       "l2"
