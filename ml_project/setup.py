@@ -1,12 +1,13 @@
 import os
 import setuptools
 
-REQUIREMENTS_PATH = "requirements.txt"
+REQUIREMENTS_PATH = 'requirements.txt'
+README_PATH       = 'README.md'
 
 with open(REQUIREMENTS_PATH, 'r') as file:
     required_libraries = file.read().splitlines()
 
-with open('README.md', 'r', encoding='utf-8') as file:
+with open(README_PATH, 'r', encoding='utf-8') as file:
     long_description = file.read()
 
 setuptools.setup(
