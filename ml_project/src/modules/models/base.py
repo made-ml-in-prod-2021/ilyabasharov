@@ -4,48 +4,49 @@ import numpy
 import typing
 
 from entities import (
-	BaseLoader,
-	ModuleParams,
+    BaseLoader,
+    ModuleParams,
 )
 
 
 class BaseModel:
 
-	def __init__(
-		self,
-		config_path: str,
-	) -> BaseModel:
+    def __init__(
+        self,
+        config_path: str,
+    ) -> BaseModel:
 
-		self.params = BaseLoader(ModuleParams).read_params(config_path)
+        self.params = BaseLoader(ModuleParams).read_params(config_path)
 
-		pass
-
-
-	def train(
-		self,
-		data: typing.Tuple[numpy.ndarray],
-	) -> typing.NoReturn:
-
-		pass
-		
-
-	def eval(
-		self,
-		data: typing.Tuple[numpy.ndarray],
-	) -> typing.NoReturn:
-
-		pass
-
-	def test(
-		self,
-		features: numpy.ndarray,
-	) -> typing.NoReturn:
-
-		pass
+        pass
 
 
-	def save(
-		self,
-	) -> typing.NoReturn:
+    def train(
+        self,
+        data: typing.Tuple[numpy.ndarray],
+    ) -> typing.NoReturn:
 
-		pass
+        pass
+
+    
+    def eval(
+        self,
+        data: typing.Tuple[numpy.ndarray],
+    ) -> typing.NoReturn:
+
+        pass
+
+
+    def test(
+        self,
+        features: numpy.ndarray,
+    ) -> typing.NoReturn:
+
+        pass
+
+
+    def save(
+        self,
+    ) -> typing.NoReturn:
+
+        pass

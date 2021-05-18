@@ -4,7 +4,7 @@ import logging.config
 
 
 def setup_logging(
-	config_path: str,
+    config_path: str,
 ) -> typing.NoReturn:
 
     '''Logger from yaml config.'''

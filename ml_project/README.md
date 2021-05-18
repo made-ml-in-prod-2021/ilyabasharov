@@ -67,11 +67,18 @@ Assignments for "ML in production" course by Mail.ru group
 ### Installation
 
 ```bash
+git clone --branch homework1 https://github.com/made-ml-in-prod-2021/ilyabasharov.git
+cd ilyabasharov/ml_project/
 pip install -e .
 ```
 
 ### Run the project
 P.S. all runnings have `--help` argument.
+
+#### Run all-in-one
+```bash
+./run_all.sh
+```
 
 #### Run training/evaluation
 
