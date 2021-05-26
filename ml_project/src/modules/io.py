@@ -41,4 +41,4 @@ def save_module(
         logger.info(f'{module.__class__.__name__} was dumped into {module_param.path}')
 
     else:
-        logger.error(f'{module.__class__.__name__} dump failed: directory {dir_name} for {filename} does not exist')
+        logger.error(f'{module.__class__.__name__} dump failed: directory {dirname} for {filename} does not exist')
