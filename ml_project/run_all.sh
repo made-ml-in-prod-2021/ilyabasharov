@@ -5,7 +5,7 @@ python3 src/train.py --config configs/run/train_logreg.yaml
 echo "Done training logistic regression model"
 
 echo "Start train Classifier model"
-python3 src/train.py n/train_sgd.yaml
+python3 src/train.py --config configs/run/train_sgd.yaml
 echo "Done training SGD Classifier model"
 
 echo "Start generating data for testing"
