@@ -101,4 +101,4 @@ There was experiments with docker images:
 :heavy_plus_sign: 10) создайте пулл-реквест и поставьте label -- hw2 (0 баллов)
 :one::seven: :penguin:
 
-Итого :one::seven:
+Итого :one::seven: :heavy_plus_sign: пункт 2)
