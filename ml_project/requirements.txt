@@ -1,8 +1,0 @@
-numpy
-click
-PyYAML
-joblib
-pandas
-scikit-learn
-pandas_profiling
-marshmallow_dataclass
