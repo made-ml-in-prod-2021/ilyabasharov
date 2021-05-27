@@ -5,7 +5,7 @@ Assignment for "ML in production" course by Mail.ru group
 ```
 └─── online_inference <- Homework2 code
 	│
-	├──	configs <- Directory with configs
+	├── configs <- Directory with configs
 	│	│
 	│	├── entities <- Directory for entities configs
 	│	└── logs <- Directory for logs configs
@@ -13,15 +13,15 @@ Assignment for "ML in production" course by Mail.ru group
 	├── setup.py <- Allows to install the project via `pip install -e .`
 	├── requirements.txt <- Required libraries. Will be installed automatically (see below)
 	│
-	├── modules		<- Saved modules (models, preprocessors etc.)
+	├── modules <- Saved modules (models, preprocessors etc.)
 	│	│
-	│	├── models		<- Directiory with fitted models
-	│	└── process		<- Directiory with fitted data processors
+	│	├── models <- Directiory with fitted models
+	│	└── process <- Directiory with fitted data processors
 	│
 	├── logs <- Directory with saved logs
 	├── src	<- Source project code
 	│	│
-	│	├── test.py	<- Test pipeline
+	│	├── test.py <- Test pipeline
 	│	├── train.py <- Train pipeline
 	│	├── entities <- Set of entities in the form of dataclass. All suggested params of
 	│	│	│
@@ -30,16 +30,16 @@ Assignment for "ML in production" course by Mail.ru group
 	│	│	├── process.py <- ... raw data processor to make features.
 	│	│	├── module.py <- ... modules with non-fixed intrinsic params.
 	│	│	├── request.py <- ... basic request
-	│	│	├── main.py	<- ... set of paths to <model, dataset, processor>.
-	│	│	└── loader.py	<- Basic loader for all type of structures
+	│	│	├── main.py <- ... set of paths to <model, dataset, processor>.
+	│	│	└── loader.py <- Basic loader for all type of structures
 	│	│
-	│	├── modules	<- Module constructors
+	│	├── modules <- Module constructors
 	│	│	│ 
 	│	│	├── models
 	│	│	│	│
-	│	│	│	├── base.py	<- Base form of Model class.
+	│	│	│	├── base.py <- Base form of Model class.
 	│	│	│	└── model.py <- Model class example
-	│	│	├── io.py	<- Save/load module via joblib
+	│	│	├── io.py <- Save/load module via joblib
 	│	│	│
 	│	│	└── process
 	│	│		│   
@@ -52,7 +52,7 @@ Assignment for "ML in production" course by Mail.ru group
 	│	├── app.py <- Main executable file for create web application
 	│	└── request.py <- Main executable file for create requests for the app
 	│	
-	└── tests			<- Tests (empty)
+	└── tests <- Tests (empty)
 
 ```
 
