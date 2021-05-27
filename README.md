@@ -3,12 +3,12 @@ Assignment for "ML in production" course by Mail.ru group
 
 ## Project structure
 ```
-├── docker		<- Directory for docker
+├── docker <- Directory for docker
 │	│
-│	├──	Dockerfile
-│	├──	build.sh
+│	├── Dockerfile
+│	├── build.sh
 │	├── start_devel.sh
-│	└──	into.sh
+│	└── into.sh
 │
 ├── online_inference <- Code for Homework2 (see additionals inside)
 │
