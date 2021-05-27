@@ -70,7 +70,7 @@ P.S. all runnings have `--help` argument.
 
 ```bash
 python3 src/app.py \
-	--host '0.0.0.0'
+	--host '0.0.0.0' \
 	--port 8000
 ```
 
@@ -78,8 +78,8 @@ If you want to check how it works on fake data, run in new terminal tab:
 
 ```bash
 python3 src/request.py \
-	--n_samples 10
-	--host '0.0.0.0'
-	--port 8000
+	--n_samples 10 \
+	--host '0.0.0.0' \
+	--port 8000 \
 	--log_config 'configs/logs/request.yaml'
 ```
