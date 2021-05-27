@@ -23,14 +23,14 @@ There are two ways of docker image build: locally (via dockerfile) and via docke
 
 ```bash
 git clone --branch homework2 https://github.com/made-ml-in-prod-2021/ilyabasharov.git
-cd ilyabasharov/
+cd ilyabasharov/online_inference/
 ./docker/build.sh
 ```
 
 ### Install the docker image via dockerhub
 ```bash
 git clone --branch homework2 https://github.com/made-ml-in-prod-2021/ilyabasharov.git
-cd ilyabasharov/
+cd ilyabasharov/online_inference/
 docker pull ilyabasharov/made_mail.ru:latest
 ```
 
@@ -41,7 +41,7 @@ P.S. all runnings have `--help` argument.
 ```bash
 ./docker/start_devel.sh
 python3 src/app.py \
-	--host '0.0.0.0'
+	--host '0.0.0.0' \
 	--port 8000
 ```
 
@@ -50,9 +50,9 @@ If you want to check how it works on fake data, run in new terminal tab:
 ```bash
 ./docker/into.sh
 python3 src/request.py \
-	--n_samples 10
-	--host '0.0.0.0'
-	--port 8000
+	--n_samples 10 \
+	--host '0.0.0.0' \
+	--port 8000 \
 	--log_config 'configs/logs/request.yaml'
 ```
 

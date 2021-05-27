@@ -10,7 +10,7 @@ docker run \
     -p 1025:1025 \
     --name online_inference \
     --net=host \
-    made_mail.ru/online_inference
+    ilyabasharov/made_mail.ru
 
 docker exec \
     -it \
