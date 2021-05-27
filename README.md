@@ -56,6 +56,13 @@ python3 src/request.py \
 	--log_config 'configs/logs/request.yaml'
 ```
 
+## Docker image size reduction
+
+There was experiments with docker images:
+1) python:3.8 - > 1 GB P.S. Huge
+2) python:3.8-alpine - < 300 MB P.S. Installation takes a huge amount of time!
+3) python:3.8-slim - ~ 600 MB P.S. Optimal
+
 ## Review
 
 :heavy_plus_sign: 0) Ветку назовите homework2, положите код в папку online_inference(0 баллов)
@@ -79,7 +86,7 @@ python3 src/request.py \
 :heavy_plus_sign: 5) Напишите `dockerfile`, соберите на его основе образ и запустите локально контейнер(`docker build`, `docker run`), внутри контейнера должен запускать сервис, написанный в предущем пункте, закоммитьте его, напишите в readme корректную команду сборки (4 балла)
 :one::two:
 
-:heavy_minus_sign::heavy_plus_sign: 6) Оптимизируйте размер docker image (опишите в readme.md что вы предприняли для сокращения размера и каких результатов удалось добиться)  -- https://docs.docker.com/develop/develop-images/dockerfile_best-practices/ (3 балла)
+:heavy_minus_sign::heavy_plus_sign: 6) Оптимизируйте размер docker image (опишите в readme.md что вы предприняли для сокращения размера и каких результатов удалось добиться) -- [пример](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) (3 балла)
 :one::three:
 
 :heavy_plus_sign: 7) опубликуйте образ в https://hub.docker.com/, используя docker push (вам потребуется зарегистрироваться) (2 балла)
