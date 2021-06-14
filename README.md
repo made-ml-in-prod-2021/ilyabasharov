@@ -5,7 +5,7 @@ Assignment for "ML in production" course by Mail.ru group
 ```
 ├── online_inference <- Code for Homework2 (see additionals inside)
 │
-└── README.md <- this file which you are reading right now
+└── README.md <- this file you are reading right now
 ```
 
 ## Installation
