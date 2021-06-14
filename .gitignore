@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Mac extensions
+**/.DS_Store
+
+# jupyter extensions
+**/.ipynb_checkpoints
+
 # Distribution / packaging
 .Python
 build/
