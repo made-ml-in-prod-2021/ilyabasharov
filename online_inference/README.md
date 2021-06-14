@@ -5,6 +5,13 @@ Assignment for "ML in production" course by Mail.ru group
 ```
 └─── online_inference <- Homework2 code
 	│
+	├── docker <- Directory for docker
+	│	│
+	│	├── Dockerfile
+	│	├── build.sh
+	│	├── start_devel.sh
+	│	└── into.sh
+	│
 	├── configs <- Directory with configs
 	│	│
 	│	├── entities <- Directory for entities configs
