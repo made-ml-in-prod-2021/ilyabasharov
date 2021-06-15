@@ -47,17 +47,22 @@ with DAG(
         filepath = 'data/model/{{ ds }}/model.pkl',
     )
 
+    preprocess = DockerOperator(
+        image = 'airflow-preprocess',
+        command = '--data_dir /data/raw/{{ ds }} --output_dir /data/pure/{{ ds }}',
+        network_mode = 'bridge',
+        task_id = 'docker-airflow-preprocess',
+        do_xcom_push = False,
+        volumes = f'{LOCAL_PATH_DATA}:/{DOCKER_PATH_DATA}',
+    )
+
     predict = DockerOperator(
         image = 'airflow-predict',
-        command = ' \
-            --data_dir /data/raw/{{ ds }} \
-            --prediction_dir /data/prediction/{{ ds }} \
-            --model_dir data/model/{{ ds }} \
-        ',
+        command = '--data_dir /data/raw/{{ ds }} --prediction_dir /data/prediction/{{ ds }} --model_dir data/model/{{ ds }}',
         network_mode = 'bridge',
         task_id = 'docker-airflow-predict',
         do_xcom_push = False,
         volumes = f'{LOCAL_PATH_DATA}:/{DOCKER_PATH_DATA}',
     )
 
-    start >> [wait_for_data, wait_for_model] >> predict >> end
+    start >> [wait_for_data, wait_for_model] >> preprocess >> predict >> end

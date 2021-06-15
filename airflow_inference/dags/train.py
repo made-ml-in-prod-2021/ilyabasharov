@@ -45,6 +45,7 @@ with DAG(
         retries = 5,
         filepath = 'data/raw/{{ ds }}/target.csv',
     )
+
     preprocess = DockerOperator(
         image = 'airflow-preprocess',
         command = ' \
@@ -54,6 +55,7 @@ with DAG(
         network_mode = 'bridge',
         task_id = 'docker-airflow-preprocess',
         do_xcom_push = False,
+        volumes = f'{LOCAL_PATH_DATA}:/{DOCKER_PATH_DATA}',
     )
 
     train = DockerOperator(
