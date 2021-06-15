@@ -37,7 +37,7 @@ with DAG(
         network_mode = 'bridge',
         task_id = 'docker-airflow-download',
         do_xcom_push = False,
-        volumes = f'{LOCAL_PATH_DATA}:/{DOCKER_PATH_DATA}',
+        volumes = f'{LOCAL_PATH_DATA}:{DOCKER_PATH_DATA}',
     )
 
     start >> download >> end

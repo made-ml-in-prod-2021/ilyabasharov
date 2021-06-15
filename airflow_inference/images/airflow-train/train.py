@@ -44,13 +44,13 @@ def train_model(
     default = 'data/pure/',
 )
 @click.option(
-    '--model_dir'
+    '--model_dir',
     help = 'Where should save the model',
     default = 'data/model/',
 )
 def train(
-    input_dir: str,
-    output_dir: str
+    data_dir: str,
+    model_dir: str
 ):
     data_path = os.path.join(data_dir, 'train_data.csv')
     data = pd.read_csv(data_path)
@@ -59,7 +59,7 @@ def train(
     model = train_model(x, y)
 
     os.makedirs(
-        name = output_dir,
+        name = model_dir,
         exist_ok = True,
     )
 
