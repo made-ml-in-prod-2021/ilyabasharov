@@ -52,7 +52,7 @@ def train(
     data_dir: str,
     model_dir: str
 ):
-    data_path = os.path.join(data_dir, 'train_data.csv')
+    data_path = os.path.join(data_dir, 'data.csv')
     data = pd.read_csv(data_path)
 
     x, y = prepare_data(data)
@@ -63,7 +63,7 @@ def train(
         exist_ok = True,
     )
 
-    model_save_path = os.path.join(model_dir, 'model.pkl')
+    model_save_path = os.path.join(model_dir, 'model.joblib')
 
     joblib.dump(
         value = model,

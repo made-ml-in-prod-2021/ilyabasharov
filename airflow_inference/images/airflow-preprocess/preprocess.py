@@ -8,13 +8,13 @@ import pandas as pd
 @click.command('predict')
 @click.option(
     '--data_dir',
-    help = '',
-    default = '',
+    help = 'Path to read the data',
+    default = '/data/raw/',
 )
 @click.option(
     '--output_dir',
-    help = '',
-    default = '',
+    help = 'Path to save preprocessed data',
+    default = '/data/pure/',
 )
 def preprocess(
     data_dir: str,
@@ -35,7 +35,7 @@ def preprocess(
     )
 
     train_data.to_csv(
-        path_or_buf = os.path.join(output_dir, 'train_data.csv'),
+        path_or_buf = os.path.join(output_dir, 'data.csv'),
         index = False,
     )
 

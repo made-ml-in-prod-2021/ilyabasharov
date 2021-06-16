@@ -35,40 +35,42 @@ docker-compose up
 
 ## Review
 
-:heavy_plus_sign: 0) Ветку назовите homework2, положите код в папку online_inference(0 баллов)
+:heavy_plus_sign: 0) Поднимите airflow локально, используя docker compose (можно использовать из примера) (0 баллов)
 :zero:
 
-:heavy_plus_sign: 1) Оберните inference вашей модели в rest сервис(вы можете использовать как `FastAPI`, так и `flask`, другие желательно не использовать, дабы не плодить излишнего разнообразия для проверяющих), должен быть endpoint /predict (3 балла)
-:three:
-
-??? 2) Напишите тест для /predict (3 балла) ([пример fastapi](https://fastapi.tiangolo.com/tutorial/testing/), [пример flask](https://flask.palletsprojects.com/en/1.1.x/testing/))
-
-Пояснение - request обернут в `pydantic` для избежания дальнейшнего проверки типов. Будет ли это зачтено лектором - не знаю.
-:three:
-
-:heavy_plus_sign: 3) ВНапишите скрипт, который будет делать запросы к вашему сервису (2 балла)
+:heavy_plus_sign: 1) Реализуйте dag, который генерирует данные для обучения модели (генерируйте данные, можете использовать как генератор синтетики из первой дз, так и что-то из датасетов sklearn), вам важно проэмулировать ситуации постоянно поступающих данных (5 балла)
 :five:
 
-:heavy_plus_sign: 4) Сделайте валидацию входных данных (например, порядок колонок не совпадает с трейном, типы не те и пр, в рамках вашей фантазии)  (вы можете сохранить вместе с моделью доп информацию, о структуре входных данных, если это нужно)
-[пример](https://fastapi.tiangolo.com/tutorial/handling-errors/) -- возращайте 400, в случае, если валидация не пройдена (3 балла)
-:eight:
+:heavy_minus_sign::heavy_plus_sign: 2) Реализуйте dag, который обучает модель еженедельно, используя данные за текущий день. В вашем пайплайне должно быть как минимум 4 стадии, но дайте волю своей фантазии=)
 
-:heavy_plus_sign: 5) Напишите `dockerfile`, соберите на его основе образ и запустите локально контейнер(`docker build`, `docker run`), внутри контейнера должен запускать сервис, написанный в предущем пункте, закоммитьте его, напишите в readme корректную команду сборки (4 балла)
-:one::two:
+Пояснение: Реализовано 2/4 - preprocess/train
 
-:heavy_minus_sign::heavy_plus_sign: 6) Оптимизируйте размер docker image (опишите в readme.md что вы предприняли для сокращения размера и каких результатов удалось добиться) -- [пример](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) (3 балла)
-:one::three:
+:one::zero:
 
-:heavy_plus_sign: 7) опубликуйте образ в https://hub.docker.com/, используя docker push (вам потребуется зарегистрироваться) (2 балла)
+:heavy_plus_sign: 3) Реализуйте dag, который использует модель ежедневно (5 баллов)
 :one::five:
 
-:heavy_plus_sign: 8) Hапишите в readme корректные команды docker pull/run, которые должны привести к тому, что локально поднимется на inference ваша модель (1 балл)
-:one::six:
+:heavy_plus_sign: 4) вы можете выбрать 2 пути для выполнения ДЗ. все даги реализованы только с помощью DockerOperator (10 баллов)
+:two::five:
 
-:heavy_plus_sign: 9) проведите самооценку (1 балл)
-:one::seven:
+:heavy_minus_sign: 5) Протестируйте ваши даги (5 баллов) https://airflow.apache.org/docs/apache-airflow/stable/best-practices.html
+:two::five:
 
-:heavy_plus_sign: 10) создайте пулл-реквест и поставьте label -- hw2 (0 баллов)
-:one::seven: :penguin:
+:heavy_minus_sign: 6) В docker compose так же настройте поднятие mlflow и запишите туда параметры обучения, метрики и артефакт(модель) (5 доп баллов)
+:two::five:
 
-Итого :one::seven: :heavy_plus_sign: пункт 2)
+:heavy_minus_sign: 7) Вместо пути в airflow variables используйте апи Mlflow Model Registry (5 доп баллов)
+:two::five:
+
+:heavy_minus_sign: 8) Настройте alert в случае падения дага (3 доп. балла)
+:two::five:
+
+:heavy_plus_sign: 9) традиционно, самооценка (1 балл)
+:two::six:
+
+:heavy_plus_sign: 10) создайте пулл-реквест и поставьте label -- hw3 (0 баллов)
+:two::six: :penguin:
+
+Итого :two::six:
+
+PS. Было очень тяжело дебажить - в логах полно непонятной информации, в интернетах пишут всякое разное ...

@@ -35,29 +35,29 @@ def save_predictions(
 @click.command('predict')
 @click.option(
     '--data_dir',
-    help = 'path to raw data',
-    default = 'data/raw/',
+    help = 'path to pure data',
+    default = '/data/pure/',
 )
 @click.option(
     '--model_dir',
     help = 'path to saved model',
-    default = 'data/model/',
+    default = '/data/model/',
 )
 @click.option(
     '--prediction_dir',
-    help = 'path to saved model',
-    default = 'data/model/',
+    help = 'path to save predictions',
+    default = '/data/prediction/',
 )
 def predict(
     data_dir: str,
     model_dir: str,
-    prediction_dir: str
+    prediction_dir: str,
 ) -> typing.NoReturn:
 
     data_path = os.path.join(data_dir, 'data.csv')
     data = pd.read_csv(data_path)
 
-    model_path = os.path.join(model_dir, 'model.pkl')
+    model_path = os.path.join(model_dir, 'model.joblib')
     model = load_model(model_path)
 
     preds = model.predict(data)
