@@ -11,7 +11,7 @@ Assignments for "ML in production" course by Mail.ru group
 
 ### Installation
 
-I was playing with kubernetes locally using (kind)[https://kind.sigs.k8s.io/docs/user/quick-start/] and (kubectl)[https://kubernetes.io/docs/tasks/tools/] and (Lens)[https://k8slens.dev]. After downloading follow these steps:
+I was playing with kubernetes locally using [kind](https://kind.sigs.k8s.io/docs/user/quick-start/) and [kubectl](https://kubernetes.io/docs/tasks/tools/) and [Lens](https://k8slens.dev). After downloading follow these steps:
 
 #### Create the server locally
 
