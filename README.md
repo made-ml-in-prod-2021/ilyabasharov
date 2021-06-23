@@ -6,8 +6,6 @@ Assignments for "ML in production" course by Mail.ru group
 ```
 ├── kubernetes <- pods for kubernetes
 │
-├── online_inference <- code for online application with model
-│
 └── README.md <- this file you are reading right now
 ```
 

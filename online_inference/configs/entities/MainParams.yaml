@@ -1,3 +1,0 @@
-logs:       "configs/logs/app.yaml"
-model:      "configs/entities/Model.yaml"
-preprocess: "configs/entities/ProcessParams.yaml"
